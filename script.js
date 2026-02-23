@@ -149,6 +149,11 @@ totalCartBox.addEventListener("click", function (event) {
       newCartBoxTwo();
 
     }
+
+    if (currentStatas === "rejected-btn") {
+      togolstyle("interview-btn");
+    }
+    //----------------------------------
     
   }
   else if (event.target.classList.contains("btn-rejected")) {
@@ -185,7 +190,6 @@ totalCartBox.addEventListener("click", function (event) {
 
     interviewList =interviewList.filter(item=> item.companyName !=cartInfo.companyName)
 
-
      updateTotalChance();
 
     if(currentStatas == "interview-btn") {
@@ -194,8 +198,47 @@ totalCartBox.addEventListener("click", function (event) {
     }
 
     calculateCount();
-    // newCartBox2();
+
+    // ----------------------
+
+    if (currentStatas === "interview-btn") {
+      togolstyle("rejected-btn");
+    }
+
+
   }
+
+///Trash icon btn for dellect 
+
+  else if (event.target.classList.contains("trashBtn")) {
+
+    const parentNode = event.target.parentNode.parentNode.parentNode;
+
+    const companyName =
+      parentNode.querySelector(".companyName").innerText;
+    parentNode.remove();
+
+    interviewList = interviewList.filter(
+      item => item.companyName !== companyName
+    );
+
+    rejectedList = rejectedList.filter(
+      item => item.companyName !== companyName
+    );
+
+    // count
+    calculateCount();
+    updateTotalChance();
+
+    if (currentStatas === "interview-btn") {
+      newCartBox();
+    }
+
+    if (currentStatas === "rejected-btn") {
+      newCartBoxTwo();
+    }
+  }
+
   
 });
 
@@ -205,6 +248,15 @@ totalCartBox.addEventListener("click", function (event) {
 //FOR 1 ---> interview success houyar jonno
 
 function newCartBox() {
+
+  if (interviewList.length === 0) {
+    noJobsAvailable.classList.remove("hidden");
+  } else {
+    noJobsAvailable.classList.add("hidden");
+  }
+
+  //-------------------------
+  
   filteredSection.innerHTML = "";
 
   for (let interview of interviewList) {
@@ -255,6 +307,13 @@ function newCartBox() {
 //FOR 2 ---> Rejected succeess houyar jonno
 
 function newCartBoxTwo() {
+
+  if (rejectedList.length === 0) {
+    noJobsAvailable.classList.remove("hidden");
+  } else {
+    noJobsAvailable.classList.add("hidden");
+  }
+
   filteredSection.innerHTML = "";
 
   for (let rejected of rejectedList) {
@@ -302,3 +361,124 @@ function newCartBoxTwo() {
 
   }
 }
+
+
+//dellet for filtered section .......>>>>
+
+filteredSection.addEventListener("click", function (event) {
+
+  if (event.target.classList.contains("trashBtn")) {
+
+    const parentNode = event.target.closest(".p-6");
+
+    const companyName =
+      parentNode.querySelector(".companyName").innerText;
+
+    parentNode.remove();
+
+    interviewList = interviewList.filter(
+      item => item.companyName !== companyName
+    );
+
+    rejectedList = rejectedList.filter(
+      item => item.companyName !== companyName
+    );
+
+    // count update
+
+    calculateCount();
+    updateTotalChance();
+
+    if (currentStatas === "interview-btn") {
+      newCartBox();
+    }
+    if (currentStatas === "rejected-btn") {
+      newCartBoxTwo();
+    }
+
+  }
+
+  /**
+   * all tab thke INTERVIEW button a click korar por interview tab a cart ta jauyar por  REJECTED button a click korle ,tokon cart ta interview button thake remove hoye reject button a niye jauyar jonno--->
+   */
+  
+
+if (event.target.classList.contains("btn-interview")) {
+
+  const parentNode = event.target.closest(".p-6");
+
+  const companyName =
+    parentNode.querySelector(".companyName").innerText;
+
+  rejectedList = rejectedList.filter(
+    item => item.companyName !== companyName
+  );
+
+  const jobExist = interviewList.find(
+    item => item.companyName === companyName
+  );
+
+  if (!jobExist) {
+    interviewList.push({
+      companyName: companyName,
+      skill: parentNode.querySelector(".skill").innerText,
+      jobType: parentNode.querySelector(".jobType").innerText,
+      worksType: parentNode.querySelector(".worksType").innerText,
+      notAppliedBtn: "INTERVIEW"
+    });
+  }
+
+  calculateCount();
+  updateTotalChance();
+
+  if (currentStatas === "rejected-btn") {
+    newCartBoxTwo();
+  }
+
+  if (currentStatas === "interview-btn") {
+    newCartBox();
+  }
+}
+
+
+
+else if (event.target.classList.contains("btn-rejected")) {
+
+  const parentNode = event.target.closest(".p-6");
+
+  const companyName =
+    parentNode.querySelector(".companyName").innerText;
+
+
+  // interview list thke remove korbo------>
+
+  interviewList = interviewList.filter(
+    item => item.companyName !== companyName
+  );
+
+  const jobExist = rejectedList.find(
+    item => item.companyName === companyName
+  );
+
+  if (!jobExist) {
+    rejectedList.push({
+      companyName: companyName,
+      skill: parentNode.querySelector(".skill").innerText,
+      jobType: parentNode.querySelector(".jobType").innerText,
+      worksType: parentNode.querySelector(".worksType").innerText,
+      notAppliedBtn: "REJECTED"
+    });
+  }
+  calculateCount();
+  updateTotalChance();
+  
+  if (currentStatas === "interview-btn") {
+    newCartBox();
+  }
+
+  if (currentStatas === "rejected-btn") {
+    newCartBoxTwo();
+  }
+}
+
+});
