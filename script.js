@@ -262,9 +262,9 @@ function newCartBox() {
   for (let interview of interviewList) {
     console.log(interview);
     let div = document.createElement("div");
-    div.className = "w-[95%] sm:w-[92%] md:w-[77%] mx-auto p-6 bg-[#ffffff] my-7 space-y-3 rounded-[5px]";
+    div.className = "w-[95%] sm:w-[92%] md:w-[77%] mx-auto p-6 bg-[#ffffff] my-7 space-y-3 rounded-[5px] ";
     div.innerHTML = `
-        <div class="flex justify-between items-center">
+        <div class="flex justify-between items-center ">
           <div>
             <h1 class="companyName font-medium text-[#002C5C]"> ${interview.companyName} </h1>
             <p class="skill" >${interview.skill} </p>
@@ -288,7 +288,7 @@ function newCartBox() {
 
         <div>
           <button
-            class=" btn-interview px-3 py-2 bg-[#FFFFFF] text-green-500 border-2 border-green-500 rounded-[5px]"
+            class=" btn-interview px-3 py-2 bg-[#3bc947] text-green-800 border  rounded-[5px]"
           >
             INTERVIEW
           </button>
@@ -328,14 +328,14 @@ function newCartBoxTwo() {
           </div>
 
           <div
-            class="p-2 border-2 border-zinc-200 rounded-[50%] flex justify-center items-center"
+            class="p-2 border-2 bg-red-600 text-amber-500 rounded-[50%] flex justify-center items-center"
           >
             <i class="trashBtn fa-solid fa-trash-can"></i>
           </div>
         </div>
 
-        <p class="jobType" > ${rejected.jobType} </p>
-        <button class="notAppliedBtn  px-3 py-2 bg-[#EEF4FF] text-green-500 rounded-[5px]">${rejected.notAppliedBtn}
+        <p class="jobType  " > ${rejected.jobType} </p>
+        <button class="notAppliedBtn  px-3 py-2 bg-[#EEF4FF] text-red-500 rounded-[5px]">${rejected.notAppliedBtn}
         
         </button>
         <p class="worksType" >
@@ -351,7 +351,7 @@ function newCartBoxTwo() {
           </button>
 
           <button
-            class="btn-rejected px-3 py-2 bg-[#FFFFFF] text-red-500 border-2 border-red-500 rounded-[5px]"
+            class="btn-rejected px-3 py-2 text-[#f70909] bg-red-400 border-2 border-red-500 rounded-[5px]"
           >
             REJECTED
           </button>
