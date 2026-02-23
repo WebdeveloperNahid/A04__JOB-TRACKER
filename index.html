@@ -16,342 +16,412 @@
     />
   </head>
   <body class="bg-[#F8FAFC]">
-    <section class="JobApplicationTracker w-[95%] sm:w-[92%] md:w-[77%] space-y-5 mx-auto pt-15">
-      <h1 class=" font-semibold text-[#002C5C] text-3xl" >Job Application Tracker</h1>
-      <div class="grid grid-cols-3 gap-4 mx-auto ">
-        <div  class="p-5 bg-[#FFFFFF]">
-          <p >Total</p>
+    <section
+      class="JobApplicationTracker w-[95%] sm:w-[92%] md:w-[77%] space-y-5 mx-auto pt-15"
+    >
+      <h1 class="font-semibold text-[#002C5C] text-3xl">
+        Job Application Tracker
+      </h1>
+      <div class="grid grid-cols-3 gap-4 mx-auto">
+        <div class="p-5 bg-[#FFFFFF]">
+          <p>Total</p>
           <!-- count id -->
           <span id="total-count" class="font-bold text-[18px]">0</span>
         </div>
         <div class="p-5 bg-[#FFFFFF]">
           <p>Interview</p>
           <!-- count id -->
-          <span  id="interview-count" class="text-green-500 text-[18px] font-bold">0</span> 
+          <span
+            id="interview-count"
+            class="text-green-500 text-[18px] font-bold"
+            >0</span
+          >
         </div>
-        <div  class="p-5 bg-[#FFFFFF]">
+        <div class="p-5 bg-[#FFFFFF]">
           <p>Rejected</p>
           <!-- count id -->
-          <span id="rejected-count" class=" text-red-500 text-[18px] font-bold">0</span>
+          <span id="rejected-count" class="text-red-500 text-[18px] font-bold"
+            >0</span
+          >
         </div>
       </div>
     </section>
 
     <!-- Available job -->
 
-    <section id="all-togol-btn" class="w-[95%] sm:w-[92%] md:w-[77%] mx-auto space-y-5 pt-10">
+    <section
+      id="all-togol-btn"
+      class="w-[95%] sm:w-[92%] md:w-[77%] mx-auto space-y-5 pt-10"
+    >
       <div class="flex justify-between items-center">
-        <h1 class="font-medium text-[#002C5C]">Available Jobs</h1>
-        <p><span>1</span> of 8 jobs</p>
+        <h1 class=" font-medium text-[#002C5C]">Available Jobs</h1>
+        <p><span id="interviewRejected">0</span> of 8 jobs</p>
       </div>
 
       <div>
         <!-- all btn id-->
-        <button onclick="togolstyle('all-btn')" id="all-btn" class="w-24 h-11 text-center bg-[#030303] text-white mr-2.5 rounded-[5px]">
+        <button
+          onclick="togolstyle('all-btn')"
+          id="all-btn"
+          class="w-24 h-11 text-center bg-[#030303] text-white mr-2.5 rounded-[5px]"
+        >
           <h3>All</h3>
         </button>
         <!-- interview btn id  -->
-        <button onclick="togolstyle('interview-btn')" id="interview-btn" class="w-24 h-11 text-center bg-[#FFFFFF] mr-2.5 rounded-[5px]">
+        <button
+          onclick="togolstyle('interview-btn')"
+          id="interview-btn"
+          class="w-24 h-11 text-center bg-[#FFFFFF] mr-2.5 rounded-[5px]"
+        >
           <h3>Interview</h3>
         </button>
         <!-- rejected btn id -->
-        <button onclick="togolstyle('rejected-btn')" id="rejected-btn" class="w-24 h-11 text-center bg-[#FFFFFF] mr-2.5 rounded-[5px]">
+        <button
+          onclick="togolstyle('rejected-btn')"
+          id="rejected-btn"
+          class="w-24 h-11 text-center bg-[#FFFFFF] mr-2.5 rounded-[5px]"
+        >
           <h3>Rejected</h3>
         </button>
       </div>
     </section>
 
+    <!-- filtered-section creat box -->
+     
+     <section id="filtered-section" class="hidden"> 
+
+     </section>
+
     <!-- Available Jobs Cart -->
-     <!-- all cart box id -->
-    <section id="total-cart-box" class="w-[95%] sm:w-[92%] md:w-[77%] mx-auto space-y-2.5">
+    <!-- all cart box id -->
+    <section
+      id="total-cart-box"
+      class="  w-[95%] sm:w-[92%] md:w-[77%] mx-auto space-y-2.5"
+    >
       <div class="p-6 bg-[#ffffff] my-7 space-y-3 rounded-[5px]">
+
         <div class="flex justify-between items-center">
           <div>
-            <h1 class="font-medium text-[#002C5C]">Mobile First Corp</h1>
-            <p>React Native Developer</p>
+            <h1 class="companyName font-medium text-[#002C5C]">Mobile First Corp</h1>
+            <p class="skill" >React Native Developer</p>
           </div>
 
           <div
             class="p-2 border-2 border-zinc-200 rounded-[50%] flex justify-center items-center"
           >
-            <i class="fa-solid fa-trash-can"></i>
+            <i class="trashBtn fa-solid fa-trash-can"></i>
           </div>
         </div>
 
-        <p>
-        Remote • Full-time • $130,000 - $175,000
-      </p>
-      <button class="px-3 py-2 bg-[#EEF4FF] rounded-[5px]">NOT APPLIED</button>
-      <p>
-        Build cross-platform mobile applications using React Native. Work on
-        products used by millions of users worldwide.
-      </p>
-
-      <div>
-        <button class="px-3 py-2 bg-[#FFFFFF] text-green-500 border-2 border-green-500 rounded-[5px]">
-            <h2>INTERVIEW</h2>
+        <p class="jobType" >Remote • Full-time • $130,000 - $175,000</p>
+        <button class="notAppliedBtn  px-3 py-2 bg-[#EEF4FF] rounded-[5px]">
+          NOT APPLIED
         </button>
+        <p class="worksType" >
+          Build cross-platform mobile applications using React Native. Work on
+          products used by millions of users worldwide.
+        </p>
 
-        <button class="px-3 py-2 bg-[#FFFFFF] text-red-500 border-2 border-red-500 rounded-[5px]">
-            <h2>REJECTED</h2>
-        </button>
-      </div>
+        <div>
+          <button
+            class=" btn-interview px-3 py-2 bg-[#FFFFFF] text-green-500 border-2 border-green-500 rounded-[5px]"
+          >
+            INTERVIEW
+          </button>
 
+          <button
+            class="btn-rejected px-3 py-2 bg-[#FFFFFF] text-red-500 border-2 border-red-500 rounded-[5px]"
+          >
+            REJECTED
+          </button>
+        </div>
       </div>
 
       <div class="p-6 bg-[#ffffff] my-7 space-y-3 rounded-[5px]">
         <div class="flex justify-between items-center">
           <div>
-            <h1 class="font-medium text-[#002C5C]">WebFlow Agency</h1>
-            <p>Web Designer & Developer</p>
+            <h1 class="companyName font-medium text-[#002C5C]">WebFlow Agency</h1>
+            <p class="skill" >Web Designer & Developer</p>
           </div>
 
           <div
             class="p-2 border-2 border-zinc-200 rounded-[50%] flex justify-center items-center"
           >
-            <i class="fa-solid fa-trash-can"></i>
+            <i class=" trashBtn fa-solid fa-trash-can"></i>
           </div>
         </div>
 
-        <p>
-        Los Angeles, CA • part-time •  $80,000 - $120,000
-      </p>
-      <button class="px-3 py-2 bg-[#EEF4FF] rounded-[5px]">NOT APPLIED</button>
-      <p>
-       Create stunning web experiences for high-profile clients. Must have portfolio and experience with modern web design trends.
-      </p>
-
-      <div>
-        <button class="px-3 py-2 bg-[#FFFFFF] text-green-500 border-2 border-green-500 rounded-[5px]">
-            <h2>INTERVIEW</h2>
+        <p class="jobType" >Los Angeles, CA • part-time • $80,000 - $120,000</p>
+        <button class="notAppliedBtn px-3 py-2 bg-[#EEF4FF] rounded-[5px]">
+          NOT APPLIED
         </button>
+        <p class="worksType"  >
+          Create stunning web experiences for high-profile clients. Must have
+          portfolio and experience with modern web design trends.
+        </p>
 
-        <button class="px-3 py-2 bg-[#FFFFFF] text-red-500 border-2 border-red-500 rounded-[5px]">
-            <h2>REJECTED</h2>
-        </button>
-      </div>
+        <div>
+          <button
+            class=" btn-interview px-3 py-2 bg-[#FFFFFF] text-green-500 border-2 border-green-500 rounded-[5px]"
+          >
+            INTERVIEW
+          </button>
 
+          <button
+            class="btn-rejected px-3 py-2 bg-[#FFFFFF] text-red-500 border-2 border-red-500 rounded-[5px]"
+          >
+            REJECTED
+          </button>
+        </div>
       </div>
 
       <div class="p-6 bg-[#ffffff] my-7 space-y-3 rounded-[5px]">
         <div class="flex justify-between items-center">
           <div>
-            <h1 class="font-medium text-[#002C5C]">DataViz Solutions</h1>
-            <p>Data Visualization Specialist</p>
+            <h1 class="companyName font-medium text-[#002C5C]">DataViz Solutions</h1>
+            <p class="skill"  >Data Visualization Specialist</p>
           </div>
 
           <div
             class="p-2 border-2 border-zinc-200 rounded-[50%] flex justify-center items-center"
           >
-            <i class="fa-solid fa-trash-can"></i>
+            <i class="trashBtn  fa-solid fa-trash-can"></i>
           </div>
         </div>
 
-        <p>
-        Boston, MA • Full-time •  $125,000 - $165,000
-      </p>
-      <button class="px-3 py-2 bg-[#EEF4FF] rounded-[5px]">NOT APPLIED</button>
-      <p>
-       Transform complex data into compelling visualizations. Required skills: D3.js, React, and strong analytical thinking.
-      </p>
-
-      <div>
-        <button class="px-3 py-2 bg-[#FFFFFF] text-green-500 border-2 border-green-500 rounded-[5px]">
-            <h2>INTERVIEW</h2>
+        <p  class="jobType"  >Boston, MA • Full-time • $125,000 - $165,000</p>
+        <button class="notAppliedBtn px-3 py-2 bg-[#EEF4FF] rounded-[5px]">
+          NOT APPLIED
         </button>
+        <p class="worksType">
+          Transform complex data into compelling visualizations. Required
+          skills: D3.js, React, and strong analytical thinking.
+        </p>
 
-        <button class="px-3 py-2 bg-[#FFFFFF] text-red-500 border-2 border-red-500 rounded-[5px]">
-            <h2>REJECTED</h2>
-        </button>
-      </div>
+        <div>
+          <button
+            class="btn-interview px-3 py-2 bg-[#FFFFFF] text-green-500 border-2 border-green-500 rounded-[5px]"
+          >
+            INTERVIEW
+          </button>
 
+          <button
+            class="btn-rejected px-3 py-2 bg-[#FFFFFF] text-red-500 border-2 border-red-500 rounded-[5px]"
+          >
+            REJECTED
+          </button>
+        </div>
       </div>
 
       <div class="p-6 bg-[#ffffff] my-7 space-y-3 rounded-[5px]">
         <div class="flex justify-between items-center">
           <div>
-            <h1 class="font-medium text-[#002C5C]">CloudFirst Inc</h1>
-            <p>Backend Developer</p>
+            <h1 class="companyName font-medium text-[#002C5C]">CloudFirst Inc</h1>
+            <p class="skill">Backend Developer</p>
           </div>
 
           <div
             class="p-2 border-2 border-zinc-200 rounded-[50%] flex justify-center items-center"
           >
-            <i class="fa-solid fa-trash-can"></i>
+            <i class="trashBtn fa-solid fa-trash-can"></i>
           </div>
         </div>
 
-        <p>
-        Seattle, WA • Full-time •  $140,000 - $190,000
-      </p>
-      <button class="px-3 py-2 bg-[#EEF4FF] rounded-[5px]">NOT APPLIED</button>
-      <p>
-        Design and maintain scalable backend systems using Python and AWS. Work with modern DevOps practices and cloud infrastructure.
-      </p>
-
-      <div>
-        <button class="px-3 py-2 bg-[#FFFFFF] text-green-500 border-2 border-green-500 rounded-[5px]">
-            <h2>INTERVIEW</h2>
+        <p class="jobType">Seattle, WA • Full-time • $140,000 - $190,000</p>
+        <button class="notAppliedBtn px-3 py-2 bg-[#EEF4FF] rounded-[5px]">
+          NOT APPLIED
         </button>
+        <p  class="worksType">
+          Design and maintain scalable backend systems using Python and AWS.
+          Work with modern DevOps practices and cloud infrastructure.
+        </p>
 
-        <button class="px-3 py-2 bg-[#FFFFFF] text-red-500 border-2 border-red-500 rounded-[5px]">
-            <h2>REJECTED</h2>
-        </button>
-      </div>
+        <div>
+          <button
+            class="btn-interview px-3 py-2 bg-[#FFFFFF] text-green-500 border-2 border-green-500 rounded-[5px]"
+          >
+            INTERVIEW
+          </button>
 
+          <button
+            class="btn-rejected px-3 py-2 bg-[#FFFFFF] text-red-500 border-2 border-red-500 rounded-[5px]"
+          >
+            REJECTED
+          </button>
+        </div>
       </div>
 
       <div class="p-6 bg-[#ffffff] my-7 space-y-3 rounded-[5px]">
         <div class="flex justify-between items-center">
           <div>
-            <h1 class="font-medium text-[#002C5C]">Innovation Labs</h1>
-            <p>Innovation Labs</p>
+            <h1 class="companyName font-medium text-[#002C5C]">Innovation Labs</h1>
+            <p class="skill">Innovation Labs</p>
           </div>
 
           <div
             class="p-2 border-2 border-zinc-200 rounded-[50%] flex justify-center items-center"
           >
-            <i class="fa-solid fa-trash-can"></i>
+            <i class="trashBtn fa-solid fa-trash-can"></i>
           </div>
         </div>
 
-        <p>
-        RemoteAustin, TX • Full-time • $110,000 - $150,000
-      </p>
-      <button class="px-3 py-2 bg-[#EEF4FF] rounded-[5px]">NOT APPLIED</button>
-      <p>
-        Create beautiful and functional user interfaces for our suite of products. Strong design skills and frontend development expertise required.
-      </p>
-
-      <div>
-        <button class="px-3 py-2 bg-[#FFFFFF] text-green-500 border-2 border-green-500 rounded-[5px]">
-            <h2>INTERVIEW</h2>
+        <p class="jobType">RemoteAustin, TX • Full-time • $110,000 - $150,000</p>
+        <button class="notAppliedBtn px-3 py-2 bg-[#EEF4FF] rounded-[5px]">
+          NOT APPLIED
         </button>
+        <p class="worksType">
+          Create beautiful and functional user interfaces for our suite of
+          products. Strong design skills and frontend development expertise
+          required.
+        </p>
 
-        <button class="px-3 py-2 bg-[#FFFFFF] text-red-500 border-2 border-red-500 rounded-[5px]">
-            <h2>REJECTED</h2>
-        </button>
-      </div>
+        <div>
+          <button
+            class=" btn-interview  px-3 py-2 bg-[#FFFFFF] text-green-500 border-2 border-green-500 rounded-[5px]"
+          >
+            INTERVIEW
+          </button>
 
+          <button
+            class="btn-rejected px-3 py-2 bg-[#FFFFFF] text-red-500 border-2 border-red-500 rounded-[5px]"
+          >
+            REJECTED
+          </button>
+        </div>
       </div>
 
       <div class="p-6 bg-[#ffffff] my-7 space-y-3 rounded-[5px]">
         <div class="flex justify-between items-center">
           <div>
-            <h1 class="font-medium text-[#002C5C]">MegaCorp Solutions</h1>
-            <p>JavaScript Developer</p>
+            <h1 class="companyName font-medium text-[#002C5C]">MegaCorp Solutions</h1>
+            <p class="skill">JavaScript Developer</p>
           </div>
 
           <div
             class="p-2 border-2 border-zinc-200 rounded-[50%] flex justify-center items-center"
           >
-            <i class="fa-solid fa-trash-can"></i>
+            <i class="trashBtn fa-solid fa-trash-can"></i>
           </div>
         </div>
 
-        <p>
-        New York, NY • Full-time • $130,000 - $170,00
-      </p>
-      <button class="px-3 py-2 bg-[#EEF4FF] rounded-[5px]">NOT APPLIED</button>
-      <p>
-        Build enterprise applications with JavaScript and modern frameworks. We offer competitive compensation, health insurance, and professional development opportunities.
-      </p>
-
-      <div>
-        <button class="px-3 py-2 bg-[#FFFFFF] text-green-500 border-2 border-green-500 rounded-[5px]">
-            <h2>INTERVIEW</h2>
+        <p class="jobType" >New York, NY • Full-time • $130,000 - $170,00</p>
+        <button class="notAppliedBtn px-3 py-2 bg-[#EEF4FF] rounded-[5px]">
+          NOT APPLIED
         </button>
+        <p class="worksType">
+          Build enterprise applications with JavaScript and modern frameworks.
+          We offer competitive compensation, health insurance, and professional
+          development opportunities.
+        </p>
 
-        <button class="px-3 py-2 bg-[#FFFFFF] text-red-500 border-2 border-red-500 rounded-[5px]">
-            <h2>REJECTED</h2>
-        </button>
-      </div>
+        <div>
+          <button
+            class="btn-interview px-3 py-2 bg-[#FFFFFF] text-green-500 border-2 border-green-500 rounded-[5px]"
+          >
+            INTERVIEW
+          </button>
 
+          <button
+            class="btn-rejected px-3 py-2 bg-[#FFFFFF] text-red-500 border-2 border-red-500 rounded-[5px]"
+          >
+            REJECTED
+          </button>
+        </div>
       </div>
 
       <div class="p-6 bg-[#ffffff] my-7 space-y-3 rounded-[5px]">
         <div class="flex justify-between items-center">
           <div>
-            <h1 class="font-medium text-[#002C5C]">StartupXYZ</h1>
-            <p>Full Stack Engineer</p>
+            <h1 class="companyName font-medium text-[#002C5C]">StartupXYZ</h1>
+            <p class="skill" >Full Stack Engineer</p>
           </div>
 
           <div
             class="p-2 border-2 border-zinc-200 rounded-[50%] flex justify-center items-center"
           >
-            <i class="fa-solid fa-trash-can"></i>
+            <i class="trashBtn fa-solid fa-trash-can"></i>
           </div>
         </div>
 
-        <p>
-        Remote CA • part-time •  $120,000 - $160,000
-      </p>
-      <button class="px-3 py-2 bg-[#EEF4FF] rounded-[5px]">NOT APPLIED</button>
-      <p>
-       Join our fast-growing startup and work on our core platform. Experience with Node.js and React required. Great benefits and equity package included.
-      </p>
-
-      <div>
-        <button class="px-3 py-2 bg-[#FFFFFF] text-green-500 border-2 border-green-500 rounded-[5px]">
-            <h2>INTERVIEW</h2>
+        <p class="jobType">Remote CA • part-time • $120,000 - $160,000</p>
+        <button class="notAppliedBtn px-3 py-2 bg-[#EEF4FF] rounded-[5px]">
+          NOT APPLIED
         </button>
+        <p class="worksType">
+          Join our fast-growing startup and work on our core platform.
+          Experience with Node.js and React required. Great benefits and equity
+          package included.
+        </p>
 
-        <button class="px-3 py-2 bg-[#FFFFFF] text-red-500 border-2 border-red-500 rounded-[5px]">
-            <h2>REJECTED</h2>
-        </button>
+        <div>
+          <button
+            class=" btn-interview px-3 py-2 bg-[#FFFFFF] text-green-500 border-2 border-green-500 rounded-[5px]"
+          >
+            INTERVIEW
+          </button>
+
+          <button
+            class="btn-rejected px-3 py-2 bg-[#FFFFFF] text-red-500 border-2 border-red-500 rounded-[5px]"
+          >
+            REJECTED
+          </button>
+        </div>
       </div>
 
-      </div>
-      
       <div class="p-6 bg-[#ffffff] my-7 space-y-3 rounded-[5px]">
         <div class="flex justify-between items-center">
           <div>
-            <h1 class="font-medium text-[#002C5C]">TechCorp Industries</h1>
-            <p>Senior Frontend Developer</p>
+            <h1 class="companyName font-medium text-[#002C5C]">TechCorp Industries</h1>
+            <p class="skill">Senior Frontend Developer</p>
           </div>
 
           <div
             class="p-2 border-2 border-zinc-200 rounded-[50%] flex justify-center items-center"
           >
-            <i class="fa-solid fa-trash-can"></i>
+            <i class="trashBtn fa-solid fa-trash-can"></i>
           </div>
         </div>
 
-        <p>
-        San Francisco, CA • Full-time • $130,000 - $175,000
-      </p>
-      <button class="px-3 py-2 bg-[#EEF4FF] rounded-[5px]">NOT APPLIED</button>
-      <p>
-        We are looking for an experienced Frontend Developer to build scalable web applications using React and TypeScript. You will work with a talented team on cutting-edge projects.
-      </p>
-
-      <div>
-        <button class="px-3 py-2 bg-[#FFFFFF] text-green-500 border-2 border-green-500 rounded-[5px]">
-            <h2>INTERVIEW</h2>
+        <p class="jobType">San Francisco, CA • Full-time • $130,000 - $175,000</p>
+        <button class="notAppliedBtn  px-3 py-2 bg-[#EEF4FF] rounded-[5px]">
+          NOT APPLIED
         </button>
+        <p class="worksType">
+          We are looking for an experienced Frontend Developer to build scalable
+          web applications using React and TypeScript. You will work with a
+          talented team on cutting-edge projects.
+        </p>
 
-        <button class="px-3 py-2 bg-[#FFFFFF] text-red-500 border-2 border-red-500 rounded-[5px]">
-            <h2>REJECTED</h2>
-        </button>
+        <div>
+          <button
+            class="btn-interview px-3 py-2 bg-[#FFFFFF] text-green-500 border-2 border-green-500 rounded-[5px]"
+          >
+            INTERVIEW
+          </button>
+
+          <button
+            class="btn-rejected px-3 py-2 bg-[#FFFFFF] text-red-500 border-2 border-red-500 rounded-[5px]"
+          >
+            REJECTED
+          </button>
+        </div>
       </div>
-
-      </div>
-
     </section>
 
     <!-- Available job  Intervew + Rejected -->
 
-    <section class="w-[95%] sm:w-[92%] md:w-[77%] mx-auto space-y-2.5 bg-[#ffffff] py-15 px-10 mb-40">
-        <div class="flex justify-center ">
-            <img src="img/jobs.png" alt="">
-        </div>
-        <div class="text-center pt-5">
-            <h1>No jobs available</h1>
-            <p>Check back soon for new job opportunities</p>
-        </div>
+    <section
+      class="w-[95%] sm:w-[92%] md:w-[77%] mx-auto space-y-2.5 bg-[#ffffff] py-15 px-10 mb-40 mt-10 hidden " id="no-jobs-available"
+    >
+      <div class="flex justify-center">
+        <img src="img/jobs.png" alt="" />
+      </div>
+      <div class="text-center pt-5">
+        <h1>No jobs available</h1>
+        <p>Check back soon for new job opportunities</p>
+      </div>
     </section>
 
     <script src="script.js"></script>
-
   </body>
 </html>
